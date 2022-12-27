@@ -7,7 +7,7 @@ const ArticleProps ={
 
 
 // Props sao usadas apenas para leitura
-export default function Article({title, subtitle} = ArticleProps){
+export default function Post({ title, subtitle } = ArticleProps){
   return (
     <>
       <h3>{title}</h3>

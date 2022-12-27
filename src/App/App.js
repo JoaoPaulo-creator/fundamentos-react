@@ -4,8 +4,8 @@ realizar o import do React
 */
 
 import React from "react";
-import Article from "./components/article";
-
+import Post from "./components/posts/Post";
+import Header from "./components/Header/Header";
 
 export default function App(){
   return (
@@ -15,22 +15,28 @@ export default function App(){
     Esse conceito vem diretamente do HTML, nao sendo exclusivo do React
     */
     <>
-      <h1>Meu blog</h1>
-      <h2>Posts da semana</h2>
+
+      <Header
+        title='Blog do ze'
+        subtitle={'sasdas'}
+      >
+        <h2>Posts da semana</h2>
+
+      </Header>
 
       <hr />
 
-      <Article
+      <Post
         title='News Title 1'
         subtitle='News subtitile 1'
       />
 
-      <Article
+      <Post
         title='News Title 2'
         subtitle='News subtitile 2'
       />
 
-      <Article
+      <Post
         title='News Title 3'
         subtitle='News subtitile 3'
       />
