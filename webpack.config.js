@@ -20,7 +20,7 @@ module.exports = {
 
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /\.jsx?$/, // aqui o loader vai verificar tanto arquivos js, quanto jsx
       exclude: /node_modules/, // excluindo a execucao do babel loader nos arquivos js do node_modules
       use: 'babel-loader'
     }]

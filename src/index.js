@@ -1,14 +1,15 @@
 import React from "react";
-import  ReactDOM  from "react-dom";
+import ReactDOM  from "react-dom";
+import App from './App/App'
+
 
 /*
 Sempre que se utiliza o JSX, implicitamente o React está sendo utilizado, sendo necessário sempre
 realizar o import do React
 */
 
-
 ReactDOM.render(
-  <h1 id="title">Hello word</h1>,
+  <App />,
   document.getElementById('root')
 )
 
