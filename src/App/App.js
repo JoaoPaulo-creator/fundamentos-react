@@ -35,7 +35,8 @@ export default function App(){
 
       {posts.map(post => (
         /* Sempre for renderiar uma lista, como por exemplo utilizado map, cada um precisara de uma prop do proprio react,
-         que é a key. Utilizada pelo react por baixo dos panos, pra fazer algo que nao faço ideia */
+         que é a key. Utilizada pelo react por baixo dos panos, pra fazer algo que nao faço ideia.
+         Essa key precisa ser unica*/
         <Post
           key={post.title}
           likes={post.likes}
