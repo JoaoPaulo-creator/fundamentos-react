@@ -7,9 +7,9 @@ export default function Post(props){
   return (
     <>
       <article>
-        <strong>{props.title}</strong> <br />
-        <small>{props.subtitle}</small> <br />
-        Media: {props.likes} <br />
+        <strong>{props.post.title}</strong> <br />
+        <small>{props.post.subtitle}</small> <br />
+        Media: {props.likes / 2} <br />
         <br />
       </article>
     </>
