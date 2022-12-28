@@ -1,17 +1,22 @@
 import React from "react";
-
-const ArticleProps ={
-  title: String,
-  subtitle: String
-}
+import PropTypes from 'prop-types'
 
 
 // Props sao usadas apenas para leitura
-export default function Post({ title, subtitle } = ArticleProps){
+export default function Post(props){
   return (
     <>
-      <h3>{title}</h3>
-      <small>{subtitle}</small>
+      <article>
+        <strong>{props.title}</strong> <br />
+        <small>{props.subtitle}</small> <br />
+        Media: {props.likes} <br />
+        <br />
+      </article>
     </>
+
   )
+}
+
+Post.propTypes = {
+  likes: PropTypes.number.isRequired
 }

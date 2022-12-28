@@ -17,7 +17,8 @@ export default function App(){
     <>
 
       <Header
-        title='Blog do ze'
+
+        title='Blog do aklsjdlaksjd'
         subtitle={'sasdas'}
       >
         <h2>Posts da semana</h2>
@@ -27,18 +28,21 @@ export default function App(){
       <hr />
 
       <Post
-        title='News Title 1'
-        subtitle='News subtitile 1'
+        title = 'News Title 1'
+        subtitle = 'News subtitile 1'
+        likes={20}
       />
 
       <Post
         title='News Title 2'
         subtitle='News subtitile 2'
+        likes={15}
       />
 
       <Post
         title='News Title 3'
         subtitle='News subtitile 3'
+        likes={2}
       />
 
 
