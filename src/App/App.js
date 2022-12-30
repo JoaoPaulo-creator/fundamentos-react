@@ -11,9 +11,10 @@ import Header from "./components/Header/Header";
 export default function App(){
 
   const [posts, setPosts] = useState([
-    { id: Math.random(), title: 'Titulo 1', subtitle: 'Subtitulo 1', likes: 10 },
-    { id: Math.random(), title: 'Titulo 2', subtitle: 'Subtitulo 2', likes: 20 },
-    { id: Math.random(), title: 'Titulo 3', subtitle: 'Subtitulo 3', likes: 48 }
+    { id: Math.random(), title: 'Titulo 1', subtitle: 'Subtitulo 1', likes: 10, read: false },
+    { id: Math.random(), title: 'Titulo 2', subtitle: 'Subtitulo 2', likes: 20, read: true },
+    { id: Math.random(), title: 'Titulo 3', subtitle: 'Subtitulo 3', likes: 48, read: false },
+    { id: Math.random(), title: 'Titulo 4', subtitle: 'Subtitulo 4', likes: 12, read: false }
   ])
 
 
@@ -69,13 +70,8 @@ export default function App(){
          Essa key precisa ser unica*/
         <Post
           key={post.id}
-          likes={post.likes}
           onRemove={handleRemovePost}
-          post={{
-            id: post.id,
-            title: post.title,
-            subtitle: post.subtitle
-          }}
+          post={post}
         />
         ))}
     </>
