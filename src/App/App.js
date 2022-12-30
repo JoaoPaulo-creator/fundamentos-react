@@ -7,6 +7,7 @@ import React, { useState, createContext } from "react";
 import Post from "./components/posts/Post";
 import Header from "./components/Header/Header";
 import { ThemeProvider } from "./ThemeContext";
+import styles from './App.scss'
 
 
 export default function App(){
@@ -16,12 +17,11 @@ export default function App(){
   }
 
 
-
   const [posts, setPosts] = useState([
-    { id: Math.random(), title: 'Titulo 1', subtitle: 'Subtitulo 1', likes: randomLikes(), read: false },
-    { id: Math.random(), title: 'Titulo 2', subtitle: 'Subtitulo 2', likes: randomLikes(), read: true },
-    { id: Math.random(), title: 'Titulo 3', subtitle: 'Subtitulo 3', likes: randomLikes(), read: true },
-    { id: Math.random(), title: 'Titulo 4', subtitle: 'Subtitulo 4', likes: randomLikes(), read: false }
+    { id: Math.random(), title: 'Titulo 1', subtitle: 'Subtitulo 1', likes: randomLikes(), read: false, removed: true },
+    { id: Math.random(), title: 'Titulo 2', subtitle: 'Subtitulo 2', likes: randomLikes(), read: true , removed: false },
+    { id: Math.random(), title: 'Titulo 3', subtitle: 'Subtitulo 3', likes: randomLikes(), read: true , removed: false },
+    { id: Math.random(), title: 'Titulo 4', subtitle: 'Subtitulo 4', likes: randomLikes(), read: false, removed: false }
   ])
 
 
@@ -44,8 +44,9 @@ export default function App(){
   }
 
   function handleRemovePost(postId){
-    console.log({ postId })
-    setPosts((prevState) => prevState.filter(post => post.id !== postId))
+    setPosts((prevState) => prevState.map(
+      post => post.id === postId ? { ...post, removed: true } : post
+    ))
   }
 
   return (
@@ -58,15 +59,15 @@ export default function App(){
 
       <Header
         title='Le ninja blog'
-        subtitle={'sasdas'}
-
+        subtitle={'Blog de humor KEKW'}
       >
-        <h2>
+        <h2 className={styles.title}>
           Posts da semana
           <button
             onClick={handleRefresh}
             style={{
               margin: '8px',
+              borderRadius: '12px'
             }}
           >Refresh</button>
         </h2>

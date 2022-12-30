@@ -25,9 +25,19 @@ module.exports = {
       use: 'babel-loader'
     },
     {
-      test: /\.css$/,
-      use: ['style-loader' ,'css-loader'] // necessario passar nessa ordem, para nao quebrar a aplicacao
-    }],
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true // habilitando css modules
+          }
+        },
+        'sass-loader'
+      ] // necessario passar nessa ordem, para nao quebrar a aplicacao
+    }
+  ],
   },
 
   // setando uma porta para o servidor

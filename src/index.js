@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM  from "react-dom";
 import App from './App/App'
-import './index.css'
+import './index.scss'
 
 /*
 Sempre que se utiliza o JSX, implicitamente o React está sendo utilizado, sendo necessário sempre

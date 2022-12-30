@@ -11,7 +11,8 @@ export default function Button(props) {
       style={{
         color: theme === 'dark' ? '#fff' : '#000',
         background: theme === 'dark' ? '#000' : '#fff',
-        margin: '10px'
+        margin: '10px',
+        borderRadius: '12px'
       }}
     >
       {props.children}
