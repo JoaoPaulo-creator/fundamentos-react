@@ -3,18 +3,26 @@ Sempre que se utiliza o JSX, implicitamente o React está sendo utilizado, sendo
 realizar o import do React
 */
 
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import Post from "./components/posts/Post";
 import Header from "./components/Header/Header";
+import { ThemeProvider } from "./ThemeContext";
+
 
 
 export default function App(){
 
+  function randomLikes(){
+    return Math.floor(Math.random() * 10)
+  }
+
+
+
   const [posts, setPosts] = useState([
-    { id: Math.random(), title: 'Titulo 1', subtitle: 'Subtitulo 1', likes: 10, read: false },
-    { id: Math.random(), title: 'Titulo 2', subtitle: 'Subtitulo 2', likes: 20, read: true },
-    { id: Math.random(), title: 'Titulo 3', subtitle: 'Subtitulo 3', likes: 48, read: false },
-    { id: Math.random(), title: 'Titulo 4', subtitle: 'Subtitulo 4', likes: 12, read: false }
+    { id: Math.random(), title: 'Titulo 1', subtitle: 'Subtitulo 1', likes: randomLikes(), read: false },
+    { id: Math.random(), title: 'Titulo 2', subtitle: 'Subtitulo 2', likes: randomLikes(), read: true },
+    { id: Math.random(), title: 'Titulo 3', subtitle: 'Subtitulo 3', likes: randomLikes(), read: true },
+    { id: Math.random(), title: 'Titulo 4', subtitle: 'Subtitulo 4', likes: randomLikes(), read: false }
   ])
 
 
@@ -31,15 +39,17 @@ export default function App(){
         id: Math.random(),
         title: `Titulo ${prevState.length + 1}`,
         subtitle: `Subtitulo ${prevState.length + 1}`,
-        likes: 52
+        likes: randomLikes()
       }
     ])
   }
 
   function handleRemovePost(postId){
     console.log({ postId })
-    let foo = setPosts((prevState) => prevState.filter(post => post.id !== postId))
+    setPosts((prevState) => prevState.filter(post => post.id !== postId))
   }
+
+
 
 
   return (
@@ -48,10 +58,9 @@ export default function App(){
 
     Esse conceito vem diretamente do HTML, nao sendo exclusivo do React
     */
-    <>
+    <ThemeProvider>
 
       <Header
-
         title='Blog do aklsjdlaksjd'
         subtitle={'sasdas'}
       >
@@ -74,6 +83,6 @@ export default function App(){
           post={post}
         />
         ))}
-    </>
+    </ThemeProvider>
   )
 }
