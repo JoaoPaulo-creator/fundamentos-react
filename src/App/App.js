@@ -9,7 +9,6 @@ import Header from "./components/Header/Header";
 import { ThemeProvider } from "./ThemeContext";
 
 
-
 export default function App(){
 
   function randomLikes(){
@@ -49,9 +48,6 @@ export default function App(){
     setPosts((prevState) => prevState.filter(post => post.id !== postId))
   }
 
-
-
-
   return (
     /*Para renderizar elementos adjacentes, necessario coloca-los dentro da tag fragment (<></>),
     sendo tambem possivel passar um elemento html para ser o parent/pai dos elementos filhos, como uma <div></div>, por exemplo.
@@ -61,8 +57,9 @@ export default function App(){
     <ThemeProvider>
 
       <Header
-        title='Blog do aklsjdlaksjd'
+        title='Le ninja blog'
         subtitle={'sasdas'}
+
       >
         <h2>
           Posts da semana

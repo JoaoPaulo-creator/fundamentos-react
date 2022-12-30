@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { ThemeContext } from "../../ThemeContext"
 
 export default function Button(props) {
-  const theme = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
 
   return (
     <button

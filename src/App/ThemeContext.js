@@ -1,8 +1,6 @@
 import React, { useState, createContext } from "react";
 
-export const ThemeContext = createContext('dark') // contexto do tema, para ser utilizado em todos os lugares
-
-
+export const ThemeContext = createContext() // contexto do tema, para ser utilizado em todos os lugares
 
 export function ThemeProvider(props) {
   const [theme, setTheme] = useState('dark')
@@ -14,13 +12,13 @@ export function ThemeProvider(props) {
   }
 
   return (
-    <ThemeContext.Provider
-      value={{
-        theme,
-        onToggleTheme: handleToggleTheme
-      }}
-    >
-      {props.children}
-    </ThemeContext.Provider>
+      <ThemeContext.Provider
+        value={{
+          theme: theme,
+          onToggleTheme: handleToggleTheme
+        }}
+      >
+        {props.children}
+      </ThemeContext.Provider>
   )
 }
