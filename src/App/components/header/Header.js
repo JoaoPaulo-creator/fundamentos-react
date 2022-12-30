@@ -9,14 +9,6 @@ export default function Header(props) {
   return (
 
     <>
-      <div
-        style={{
-          background: '#ccc',
-          fontFamily: 'sans-serif'
-        }}
-      >
-
-      </div>
       <h1>{props.title}</h1>
       <Button onClick={onToggleTheme}>
         Mudar tema

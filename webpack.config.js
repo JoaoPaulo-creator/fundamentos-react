@@ -23,7 +23,11 @@ module.exports = {
       test: /\.jsx?$/, // aqui o loader vai verificar tanto arquivos js, quanto jsx
       exclude: /node_modules/, // excluindo a execucao do babel loader nos arquivos js do node_modules
       use: 'babel-loader'
-    }]
+    },
+    {
+      test: /\.css$/,
+      use: ['style-loader' ,'css-loader'] // necessario passar nessa ordem, para nao quebrar a aplicacao
+    }],
   },
 
   // setando uma porta para o servidor

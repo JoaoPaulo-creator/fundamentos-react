@@ -63,7 +63,12 @@ export default function App(){
       >
         <h2>
           Posts da semana
-          <button onClick={handleRefresh}>Refresh</button>
+          <button
+            onClick={handleRefresh}
+            style={{
+              margin: '8px',
+            }}
+          >Refresh</button>
         </h2>
 
       </Header>
