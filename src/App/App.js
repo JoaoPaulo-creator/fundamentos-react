@@ -35,6 +35,11 @@ export default function App(){
     ])
   }
 
+  function handleRemovePost(postId){
+    console.log({ postId })
+    let foo = setPosts((prevState) => prevState.filter(post => post.id !== postId))
+  }
+
 
   return (
     /*Para renderizar elementos adjacentes, necessario coloca-los dentro da tag fragment (<></>),
@@ -65,7 +70,9 @@ export default function App(){
         <Post
           key={post.id}
           likes={post.likes}
+          onRemove={handleRemovePost}
           post={{
+            id: post.id,
             title: post.title,
             subtitle: post.subtitle
           }}
