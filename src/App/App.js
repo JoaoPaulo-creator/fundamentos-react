@@ -7,7 +7,7 @@ import React, { useState, createContext } from "react";
 import Post from "./components/posts";
 import Header from "./components/Header";
 import { ThemeProvider } from "./context/ThemeContext";
-import styles from './App.scss'
+import { SubtitleStyle } from "./styles";
 
 
 export default function App(){
@@ -61,16 +61,15 @@ export default function App(){
         title='Le ninja blog'
         subtitle={'Blog de humor KEKW'}
       >
-        <h2 className={styles.title}>
+        <SubtitleStyle>
           Posts da semana
           <button
             onClick={handleRefresh}
-            style={{
-              margin: '8px',
-              borderRadius: '12px'
-            }}
-          >Refresh</button>
-        </h2>
+            style={{marginLeft: '8px'}}
+          >
+            Refresh
+          </button>
+        </SubtitleStyle>
 
       </Header>
 
