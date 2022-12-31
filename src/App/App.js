@@ -4,9 +4,9 @@ realizar o import do React
 */
 
 import React, { useState, createContext } from "react";
-import Post from "./components/posts/Post";
-import Header from "./components/Header/Header";
-import { ThemeProvider } from "./ThemeContext";
+import Post from "./components/posts";
+import Header from "./components/Header";
+import { ThemeProvider } from "./context/ThemeContext";
 import styles from './App.scss'
 
 

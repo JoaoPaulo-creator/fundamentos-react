@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types'
-import PostHeader from "./postbody/PostHeader";
+import PostHeader from "./postheader/PostHeader";
 import styles from './post.scss'
+import { Subtitle, Rating } from "./styles";
+
+
 // Props sao usadas apenas para leitura
 export default function Post(props){
   return (
@@ -24,8 +27,8 @@ export default function Post(props){
           }}
         />
         <br />
-        <small>{props.post.subtitle}</small> <br />
-        Likes: {props.post.likes} <br />
+        <Subtitle>{props.post.subtitle}</Subtitle> <br />
+        <Rating>Likes: {props.post.likes} <br /></Rating>
         <br />
       </article>
     </>
