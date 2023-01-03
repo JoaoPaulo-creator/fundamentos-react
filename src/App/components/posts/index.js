@@ -1,22 +1,18 @@
 import React from "react";
 import PropTypes from 'prop-types'
 import PostHeader from "./postheader/PostHeader";
-import styles from './post.scss'
-import { Subtitle, Rating } from "./styles";
+import { Container, Subtitle, Rating } from "./styles";
 
 
 // Props sao usadas apenas para leitura
 export default function Post(props){
   return (
     <>
-      <article
-        className={
-          props.post.removed
-          ? styles.postDeleted
-          : styles.post
-        }
-
-      >
+      {/*
+      A props passada num componente de estilo, como é o container, pode se chamar qualquer coisa.
+      Assm, é possível utilizar o nome dessa prop em um condicional caso necessário
+      */}
+      <Container removed={props.post.removed}>
         <PostHeader
           onRemove={props.onRemove}
           post={{
@@ -30,7 +26,7 @@ export default function Post(props){
         <Subtitle>{props.post.subtitle}</Subtitle> <br />
         <Rating>Likes: {props.post.likes} <br /></Rating>
         <br />
-      </article>
+      </Container>
     </>
   )
 }

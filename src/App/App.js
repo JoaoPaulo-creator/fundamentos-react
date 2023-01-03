@@ -18,7 +18,7 @@ export default function App(){
 
 
   const [posts, setPosts] = useState([
-    { id: Math.random(), title: 'Titulo 1', subtitle: 'Subtitulo 1', likes: randomLikes(), read: false, removed: true },
+    { id: Math.random(), title: 'Titulo 1', subtitle: 'Subtitulo 1', likes: randomLikes(), read: false, removed: false },
     { id: Math.random(), title: 'Titulo 2', subtitle: 'Subtitulo 2', likes: randomLikes(), read: true , removed: false },
     { id: Math.random(), title: 'Titulo 3', subtitle: 'Subtitulo 3', likes: randomLikes(), read: true , removed: false },
     { id: Math.random(), title: 'Titulo 4', subtitle: 'Subtitulo 4', likes: randomLikes(), read: false, removed: false }
